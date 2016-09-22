@@ -1,0 +1,59 @@
+1.全局设置，当前计算机所有的git仓库的用户信息
+git config --global user.name "name"
+git config --global user.email ""
+2. 新建文件夹---找个空的文件紧挨作为版本库的存储
+      mkdir filename --新建文件夹
+      cd filename --打开文件夹
+      pwd --显示当前的工作路径
+3.新建版本库---初始化一个版本库
+      git init --创建一个默认的隐藏的.git文件夹（根据计算机设置查看是否隐藏）
+4.如果版本库内找不到.git文件夹，可以通过命令行查看是否存在
+      ls -ah
+5.提交文件到仓库中，分两步
+      <1> 添加一个文件到仓库 --git add filename
+      <2> 附加提交该文档的说明信息 -- git commit -m "版本信息message"
+6.查看仓库的状态变化 --查看当前文件是否做好提交的准备
+      git status
+7.查看文件修改的内容--有什么不同
+      git diff filename
+8.显示文件最近的修改的日志信息
+      git log
+9.版本回退
+      HEAD--当前版本；HEAD^ --上一个版本；HEAD~5 --向上数第五个版本
+      git reset --hard HEAD^ 返回上一个版本
+      git reset --hard 版本号  返回到版本号对应的版本
+10.查看当前版本的具体内容
+      cat filename
+11.记录当前的执行过的所有命令
+      git reflog
+12.git add --可以添加多个文档，当前内容保存在暂存区内
+      git commit --一次性把暂存区内的多个文档提交至git仓库
+
+
+13.撤销工作区文件的修改 --未提交至暂存区前
+      git checkout --filename
+14.提交至暂存区后，撤销一个提交状态
+      git reset HEAD filename
+15.删除文件
+      rm filename   撤销删除 git checkout -- filename
+
+
+16.远程仓库
+      生成公钥 SSHkey
+      ssh-keygen -t rsa -C "youremail@example.com"
+      查看公钥
+      cat ~/.ssh/id_rsa.pub
+
+      git remote add origin 远程仓库地址.git
+      git push -u origin master
+
+
+17.把新的修改推送上去到远程仓库
+      git push origin master
+18.克隆远程仓库上的内容
+      git clone 远程仓库地址 .git
+
+
+
+
+https://github.com/Mrfhs/learngit.git
